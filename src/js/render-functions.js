@@ -40,11 +40,11 @@ export function clearGallery() {
     gallery.innerHTML = "";
 }
 
-export function showLoader() {
+function showLoader() {
      loader.style.display = 'block';
 }
 
-export function hideLoader() {
+function hideLoader() {
      loader.style.display = 'none';
 }
 

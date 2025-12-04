@@ -57,70 +57,36 @@
 }
 
 .loader {
-  color: #fff;
-  font-size: 10px;
-  width: 1em;
-  height: 1em;
+  width: 48px;
+  height: 48px;
+  border-width: 3px;
+  border-style: dashed solid solid dotted;
+  border-color: #FF3D00 #FF3D00 transparent #FF3D00;
   border-radius: 50%;
+  display: inline-block;
   position: relative;
-  text-indent: -9999em;
-  animation: mulShdSpin 1.3s infinite linear;
-  transform: translateZ(0);
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  display: none;
 }
 
-@keyframes mulShdSpin {
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 20px;
+  top: 31px;
+  border: 10px solid transparent;
+  border-right-color: #FF3D00;
+  transform: rotate(-40deg);
+}
 
-  0%,
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
   100% {
-    box-shadow: 0 -3em 0 0.2em,
-      2em -2em 0 0em, 3em 0 0 -1em,
-      2em 2em 0 -1em, 0 3em 0 -1em,
-      -2em 2em 0 -1em, -3em 0 0 -1em,
-      -2em -2em 0 0;
-  }
-
-  12.5% {
-    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em,
-      3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em,
-      -2em 2em 0 -1em, -3em 0 0 -1em,
-      -2em -2em 0 -1em;
-  }
-
-  25% {
-    box-shadow: 0 -3em 0 -0.5em,
-      2em -2em 0 0, 3em 0 0 0.2em,
-      2em 2em 0 0, 0 3em 0 -1em,
-      -2em 2em 0 -1em, -3em 0 0 -1em,
-      -2em -2em 0 -1em;
-  }
-
-  37.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
-      3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em,
-      -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
-  }
-
-  50% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
-      3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em,
-      -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
-  }
-
-  62.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
-      3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0,
-      -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
-  }
-
-  75% {
-    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em,
-      3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em,
-      -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
-  }
-
-  87.5% {
-    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em,
-      3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em,
-      -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    transform: rotate(360deg);
   }
 }
