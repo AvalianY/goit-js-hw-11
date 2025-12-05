@@ -26,15 +26,14 @@ form.addEventListener('submit', (event) => {
         .then(data => {
             if (data.hits.length === 0) {
                 iziToast.info({
-                message: "Sorry, there are no images matching your search query. Please try again!",
-                position: "topRight",
+                    message: "Sorry, there are no images matching your search query. Please try again!",
+                    position: "topRight",
                 });
                 clearGallery();
                 return;
             }
             imgObjArray = data.hits;
             createGallery(imgObjArray);
-            hideLoader();
         })
         .catch(error => {
             iziToast.error({
@@ -42,4 +41,5 @@ form.addEventListener('submit', (event) => {
                 position: "topRight",
             });
         })
+        .finally(() => hideLoader());
 });
