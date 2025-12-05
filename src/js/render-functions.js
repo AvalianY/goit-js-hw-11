@@ -10,7 +10,6 @@ const lightbox = new SimpleLightbox('.gallery a', {
     });
 
 export function createGallery(images) {
-    showLoader();
     clearGallery();
     
     const galleryContent = images.map(img => 
@@ -33,7 +32,6 @@ export function createGallery(images) {
 
     gallery.insertAdjacentHTML("afterbegin", galleryContent);
     lightbox.refresh();
-    hideLoader();
 }
 
 export function clearGallery() {
