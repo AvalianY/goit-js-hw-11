@@ -34,11 +34,12 @@ form.addEventListener('submit', (event) => {
             }
             imgObjArray = data.hits;
             createGallery(imgObjArray);
+            hideLoader();
         })
         .catch(error => {
             iziToast.error({
                 message: error.message,
                 position: "topRight",
             });
-        }).finally(hideLoader());
+        })
 });
