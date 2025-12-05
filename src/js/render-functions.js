@@ -38,11 +38,11 @@ export function clearGallery() {
     gallery.innerHTML = "";
 }
 
-function showLoader() {
+export function showLoader() {
      loader.style.display = 'block';
 }
 
-function hideLoader() {
+export function hideLoader() {
      loader.style.display = 'none';
 }
 
