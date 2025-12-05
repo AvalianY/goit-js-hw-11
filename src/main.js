@@ -17,6 +17,7 @@ form.addEventListener('input', () => {
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
+    clearGallery();
 
     getImagesByQuery(searchText.value)
         .then(data => {

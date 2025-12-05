@@ -11,5 +11,7 @@ export function getImagesByQuery(query,) {
             orientation: 'horizontal',
             safesearch: true,
         },
-    }).then(response => response.data);
+    }).then(response => response.data)
+        .catch(error => error);
+    
 }
